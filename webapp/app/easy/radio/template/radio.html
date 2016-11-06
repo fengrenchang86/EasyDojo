@@ -1,0 +1,21 @@
+<div>
+	<form id="myform">
+		<input type="radio"  data-dojo-type="dijit/form/RadioButton" 
+			name="drink" id="radioOne" checked value="tea" />
+		<label for="radioOne">Tea</label> <br /> 
+		
+		<input type="radio" data-dojo-type="dijit/form/RadioButton" 
+			name="drink" id="radioTwo" value="coffee" />
+		<label for="radioTwo">Coffee</label> <br />
+	
+		<button data-dojo-type="dijit/form/Button" type="button">
+			Show form submit value
+			<script type="dojo/on" data-dojo-event="click">
+            require(["dojo/dom"], function(dom){
+                 with(dom.byId('myform'))with(elements[0])with(elements[checked?0:1])alert(name+'='+value);
+                 return false;
+            });
+        </script>
+		</button>
+	</form>
+</div>
