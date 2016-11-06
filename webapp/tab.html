@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>Nothing but TAB</title>
+		
+		<script type="text/javascript">
+			var dojoConfig = {
+				parseOnLoad:true,
+				isDebug:false,
+				locale:"zh",
+				packages: [
+					{name:"app", location:"/dl/app"}
+				]
+			};
+		</script>
+		
+		<script src="/dl/dojo/dojo/dojo.js" djConfig="parseOnLoad: true, isDebug: false"></script>
+		<link rel="stylesheet" href="/dl/dojo/dijit/themes/claro/claro.css"></link>
+		<link rel="stylesheet" href="/dl/dojo/dojo/resources/dojo.css"></link>
+		<link rel="stylesheet" href="/dl/dojo/dojox/grid/resources/claroGrid.css"></link>
+		
+		
+		<script type="text/javascript">
+			require(["dijit/layout/TabContainer", "dijit/layout/ContentPane", "dojo/domReady!"], function(TabContainer, ContentPane){
+				var tc = new TabContainer({
+					style: "height: 100%; width: 100%;"
+				}, "tc1-prog");
+
+				var cp1 = new ContentPane({
+					 title: "Food",
+					 content: "We offer amazing food"
+				});
+				tc.addChild(cp1);
+
+				var cp2 = new ContentPane({
+					 title: "Drinks",
+					 content: "We are known for our drinks."
+				});
+				tc.addChild(cp2);
+
+				tc.startup();
+			});
+		</script>
+	
+	</head>
+	<body class="claro">
+		<div class="maindiv">
+			<div class="title"></div>
+			<div id="home">it works v1</div>
+		
+		
+			<div style="height:200px;"></div>
+			<div style="width: 350px; height: 290px">
+				<div id="tc1-prog"></div>
+			</div>
+	</body>
+</html>
