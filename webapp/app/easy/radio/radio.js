@@ -14,11 +14,20 @@ define([ "dojo/_base/declare", "dijit/_WidgetBase", "dijit/_TemplatedMixin",
 		templateString : template,
 		grid:null,
 		postCreate : function() {
-			var radioOne = new RadioButton({
+			radioOne = new RadioButton({
 		        checked: true,
 		        value: "tea",
 		        name: "drink",
-		    }, "radioOne").startup();
+		    }, this._radioTea).startup();
+			
+			on(this._radioTea, "Change", lang.hitch(this, this.changeRadio));
+			on(this._radioCoffee, "Change", lang.hitch(this, this.changeRadio));
+			
+			console.log(this._radioTea);
+		},
+		changeRadio: function(e) {
+			radio = e;
+			console.log(e);
 		}
 
 	});
