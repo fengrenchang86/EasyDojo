@@ -23,7 +23,7 @@
 			require([
 				"dijit/layout/TabContainer", 
 				"dijit/layout/ContentPane", 
-				"app/easy/main/summary",
+				"app/easy/summary/summary",
 				"dojo/domReady!"], 
 				function(TabContainer, ContentPane,
 						Summary){
@@ -31,16 +31,16 @@
 						style: "height: 100%; width: 100%;"
 					}, "tc1-prog");
 	
+					var summary = new Summary({
+						title: "Summary",
+					});
+					tc.addChild(summary);
+
 					var cp1 = new ContentPane({
 						 title: "Food",
 						 content: "We offer amazing food"
 					});
 					tc.addChild(cp1);
-	
-					var summary = new Summary({
-						title: "Summary",
-					});
-					tc.addChild(summary);
 
 				tc.startup();
 			});
@@ -50,7 +50,7 @@
 	<body class="claro">
 		<div class="maindiv">
 			<div class="title"></div>
-			<div id="home">it works v1</div>
+			<div id="home">it works v2.0</div>
 		
 		
 			<div style="height:200px;"></div>
