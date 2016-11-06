@@ -7,9 +7,9 @@ define(["dojo/_base/declare",
 		return declare([ContentPane, WidgetBase, TemplatedMixin], {
 			_parseAllItem: function() {
 				var id = this.id;
-				console.log(dojo.query("#" + id));
+//				console.log(dojo.query("#" + id));
 				var htmlSrcNode = dojo.query("#" + id + " *[data-dojo-type]");
-				console.log(htmlSrcNode);
+//				console.log(htmlSrcNode);
 				var requireList = ["dojo/parser"];
 				dojo.forEach(htmlSrcNode, function(item, index){
 					var newRequire = dojo.attr(item, 'data-dojo-type');
